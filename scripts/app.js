@@ -1,24 +1,27 @@
 // knockout视图对象
-var ViewModel = function(){
+var ViewModel = function() {
+  // 用self变量装载this，避免混淆
   var self = this;
+  // 动态绑定输入栏输入的内容
   self.enterToFind = ko.observable('');
 
-  // 动态绑定地址列表
-  self.filteredReadyLoc = ko.computed(function () {
-    var findLoc = locations.filter(function (readyLoc) {
+  // 使用计算属性来动态获取
+  self.filterReadyLoc = ko.computed(function() {
+    var findLoc = locations.filter(function(readyLoc) {
+      // 返回输入内容能匹配的标记
       return readyLoc.title.toLowerCase().indexOf(self.enterToFind().toLowerCase()) >= 0;
     });
-    // 设置地图标记
-    // setMarkers(findLoc);
     return findLoc;
   });
 
-  // 点击地点高亮地图上的标记
-  self.markTheFindLoc = function (readyLoc) {
-    var thisMarker=markers[locations.indexOf(readyLoc)];
+  // 点击在列表中选择的标记
+  self.markTheFindLoc = function(readyLoc) {
+    var thisMarker = markers[locations.indexOf(readyLoc)];
+    // 触发被选中的标记被点击的事件
     google.maps.event.trigger(thisMarker, 'click');
-    if(thisMarker.animation!=google.maps.Animation.DROP){
-      for(var i=0;i<locations.length;i++){
+    // 标记的动态效果（被点击选中为BOUNCE效果）
+    if (thisMarker.animation != google.maps.Animation.DROP) {
+      for (var i = 0; i < locations.length; i++) {
         markers[i].setAnimation(null);
       }
       thisMarker.setAnimation(google.maps.Animation.BOUNCE);
@@ -27,7 +30,7 @@ var ViewModel = function(){
 };
 
 // initApp
-function initApp(){
+function initApp() {
   initMap();
   ko.applyBindings(new ViewModel());
 }

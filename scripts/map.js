@@ -91,13 +91,6 @@ function setMarkers(locations,defaultIcon,highlightedIcon){
   }
 }
 
-// 移除标记（暂未用到）
-// function removeMarker(){
-//   for(var i = 0; i < markers.length; i++){
-//     markers[i].setMap(null);
-//   }
-// }
-
 // 显示信息栏
 function populateInfoWindow(marker, infowindow) {
   if (infowindow.marker != marker) {
@@ -115,7 +108,7 @@ function populateInfoWindow(marker, infowindow) {
   }
 }
 
-// 自定义标记样式颜色
+// 此方法来源：udacity课件中的指导方法，来自定义标记样式颜色
 function makeMarkerIcon(markerColor) {
   var markerImage = new google.maps.MarkerImage(
     'http://chart.googleapis.com/chart?chst=d_map_spin&chld=1.15|0|'+ markerColor +
@@ -129,5 +122,5 @@ function makeMarkerIcon(markerColor) {
 
 // 错误处理
 var errorHandler = function(){
-    alert("SORRY!GOOGLE MAP ERROR!");
+    alert("似乎出了点小问题，请检查后重试...");
 };

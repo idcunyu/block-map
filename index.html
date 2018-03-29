@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,14 @@
   <title>街区地图（重庆）- Google Map</title>
   <link rel="stylesheet" href="styles/base.css">
 </head>
+
 <body>
   <div class="container">
     <div class="fct-box">
       <h3>街区地图-重庆</h3>
       <input type="text" id="enterToFind" data-bind="value: enterToFind, valueUpdate: 'afterkeydown'" placeholder="搜索：输入后按ENTER键...">
-      <ul class="street-list" data-bind="foreach: filteredReadyLoc">
+      <!-- 将已有的全部标记或筛选出符合的标记输出显示 -->
+      <ul class="street-list" data-bind="foreach: filterReadyLoc">
         <li data-bind="text: title, click: $parent.markTheFindLoc"></li>
       </ul>
     </div>
@@ -25,4 +28,5 @@
   <script src="scripts/app.js"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBq1hdWQ2QEhvYXfUU8mA7rUBcNMJhl-nI&v=3&libraries=places&callback=initApp" onerror="errorHandler()"></script>
 </body>
+
 </html>
