@@ -4,13 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="src/css/base.css">
-  <title>Google Map 我的街区地图</title>
+  <title>街区地图（重庆）- Google Map</title>
+  <link rel="stylesheet" href="styles/base.css">
 </head>
 <body>
-  <div id="map"></div>
+  <div class="container">
+    <div class="fct-box">
+      <h3>街区地图-重庆</h3>
+      <input type="text" id="enterToFind" data-bind="value: enterToFind, valueUpdate: 'afterkeydown'" placeholder="搜索：输入后按ENTER键...">
+      <ul class="street-list" data-bind="foreach: filteredReadyLoc">
+        <li data-bind="text: title, click: $parent.markTheFindLoc"></li>
+      </ul>
+    </div>
+    <div id="map"></div>
+  </div>
 
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBq1hdWQ2QEhvYXfUU8mA7rUBcNMJhl-nI&v=3&callback=initMap"></script>
-  <script src="src/js/app.js"></script>
+  <!-- <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script> -->
+  <script type="text/javascript" src="bower_components/knockout/dist/knockout.js"></script>
+  <script src="scripts/map.js"></script>
+  <script src="scripts/app.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBq1hdWQ2QEhvYXfUU8mA7rUBcNMJhl-nI&v=3&libraries=places&callback=initApp" onerror="errorHandler()"></script>
 </body>
 </html>

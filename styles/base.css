@@ -1,0 +1,68 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container,#map {
+  height: 100%;
+  z-index: 1;
+}
+
+.fct-box{
+  box-sizing: border-box;
+  width: 320px;
+  background-color: rgba(255, 255, 255, 0.7);
+  position: absolute;
+  z-index: 2;
+  border-radius: 6px;
+  top: 58px;
+  left: 5px;
+  padding: 26px;
+}
+
+.fct-box input{
+  margin: 15px 0 8px 0;
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 4px;
+  height: 2em;
+  border: solid 1px rgb(75, 159, 222);
+}
+
+.street-list{
+  list-style: none;
+}
+
+.street-list>li{
+ padding: 6px 8px;
+ cursor: pointer;
+}
+
+.street-list>li:hover{
+  background-color: rgba(75, 159, 222, 0.5)
+}
+
+.marker-title{
+  font-weight: bold;
+  font-size: 1.3em;
+  color: #74da00;
+  margin-bottom:3px;
+}
+.marker-li{
+  font-size: 1.1em;
+}
+
+/*
+ * 响应式方案
+ */
+@media (max-width: 768px) {
+  .fct-box{
+    width: 30%;
+    padding: 10px;
+  }
+}
