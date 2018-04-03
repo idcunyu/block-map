@@ -13,16 +13,16 @@
   <div class="container">
     <div class="fct-box">
       <h3>街区地图-重庆</h3>
-      <input type="text" id="enterToFind" data-bind="value: enterToFind, valueUpdate: 'afterkeydown'" placeholder="搜索：输入后按ENTER键...">
+      <input type="text" id="enterToFind" data-bind="value: enterToFind, valueUpdate: 'afterkeydown'" placeholder="在此筛选...">
       <!-- 将已有的全部标记或筛选出符合的标记输出显示 -->
-      <ul class="street-list" data-bind="foreach: filterReadyLoc">
-        <li data-bind="text: title, click: $parent.markTheFindLoc"></li>
+      <ul class="street-list" data-bind="foreach: filterLocations">
+        <li data-bind="text: title, click: $parent.markTheClick"></li>
       </ul>
     </div>
     <div id="map"></div>
   </div>
 
-  <!-- <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script> -->
+  <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="bower_components/knockout/dist/knockout.js"></script>
   <script src="scripts/map.js"></script>
   <script src="scripts/app.js"></script>

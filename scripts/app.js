@@ -6,26 +6,22 @@ var ViewModel = function() {
   self.enterToFind = ko.observable('');
 
   // 使用计算属性来动态获取
-  self.filterReadyLoc = ko.computed(function() {
-    var findLoc = locations.filter(function(readyLoc) {
+  self.filterLocations = ko.computed(function() {
+    var findLoc = my_locations.filter(function(location) {
       // 返回输入内容能匹配的标记
-      return readyLoc.title.toLowerCase().indexOf(self.enterToFind().toLowerCase()) >= 0;
+      return location.title.toLowerCase().indexOf(self.enterToFind().toLowerCase()) >= 0;
     });
+    setMarkers(findLoc);
+    console.log("findLoc:"+findLoc);
     return findLoc;
   });
 
   // 点击在列表中选择的标记
-  self.markTheFindLoc = function(readyLoc) {
-    var thisMarker = markers[locations.indexOf(readyLoc)];
+  self.markTheClick = function(location) {
+    var now_locations=self.filterLocations();
+    var thisMarker = markers[now_locations.indexOf(location)];
     // 触发被选中的标记被点击的事件
     google.maps.event.trigger(thisMarker, 'click');
-    // 标记的动态效果（被点击选中为BOUNCE效果）
-    if (thisMarker.animation != google.maps.Animation.DROP) {
-      for (var i = 0; i < locations.length; i++) {
-        markers[i].setAnimation(null);
-      }
-      thisMarker.setAnimation(google.maps.Animation.BOUNCE);
-    }
   }
 };
 
