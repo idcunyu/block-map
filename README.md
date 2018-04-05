@@ -1,6 +1,6 @@
-Udacity前端进阶纳米学位，项目4，街区地图
+街区地图
 =======
-# 街区地图项目 - Street Map
+# 街区地图项目 - Block Map
 
 ## <i class="icon-list"></i> 本页索引
 
