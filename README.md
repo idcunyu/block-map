@@ -9,7 +9,7 @@
 
 ## 点击查看网页
 
-[街区地图（重庆）- Google Map（需挂VPN才能正常查看）](https://vernonn.github.io/udacity/project-four/index)
+[街区地图（重庆）- Google Map（需挂VPN才能正常查看）](https://www.vernonn.com/udacity/project-four/index)
 
 ## 项目说明
 
