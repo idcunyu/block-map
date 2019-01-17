@@ -2,7 +2,7 @@ Google api - 街区地图
 =======
 # 街区地图项目 - Block Map
 
-## <i class="icon-list"></i> 本页索引
+## <i class="icon-list"></i> 索引
 
 * [点击查看网页](#点击查看网页)
 * [项目说明](#项目说明)
