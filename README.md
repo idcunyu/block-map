@@ -1,6 +1,5 @@
-Google api - 街区地图
+Google 街区地图
 =======
-# 街区地图项目 - Block Map
 
 ## <i class="icon-list"></i> 索引
 
